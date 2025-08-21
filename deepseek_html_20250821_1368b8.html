@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Effects of Smoking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #0f9d58; /* Green */
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            color: #0f9d58; /* Green */
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #5f6368; /* Grey */
+        }
+        
+        h3 {
+            color: #0f9d58; /* Green */
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .intro {
+            background-color: #f8f9fa; /* Light grey */
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #0f9d58; /* Green */
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background-color: #ffffff;
+            border: 1px solid #e8e8e8; /* Light grey */
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0f9d58; /* Green */
+            margin-bottom: 0.5rem;
+        }
+        
+        .effects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .effect-card {
+            background-color: #ffffff;
+            border: 1px solid #e8e8e8; /* Light grey */
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .effect-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .effect-icon {
+            font-size: 2rem;
+            color: #0f9d58; /* Green */
+            margin-bottom: 1rem;
+        }
+        
+        .chemicals-section {
+            background-color: #f8f9fa; /* Light grey */
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .chemical-list {
+            list-style-type: none;
+            columns: 2;
+            margin: 1.5rem 0;
+        }
+        
+        .chemical-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .chemical-list li:before {
+            content: "•";
+            color: #0f9d58; /* Green */
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .timeline {
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .timeline:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background-color: #0f9d58; /* Green */
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            width: 50%;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 3rem;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+        
+        .timeline-content {
+            background-color: #ffffff;
+            border: 1px solid #e8e8e8; /* Light grey */
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #0f9d58; /* Green */
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .timeline-item:nth-child(odd):before {
+            right: -8px;
+        }
+        
+        .timeline-item:nth-child(even):before {
+            left: -8px;
+        }
+        
+        .resources {
+            background-color: #f8f9fa; /* Light grey */
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .resource-list {
+            list-style-type: none;
+            margin-top: 1.5rem;
+        }
+        
+        .resource-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e8e8e8; /* Light grey */
+        }
+        
+        .resource-list a {
+            color: #0f9d58; /* Green */
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .resource-list a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: #2c3e50; /* Dark blue-grey */
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            .chemical-list {
+                columns: 1;
+            }
+            
+            .timeline:before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding: 1.5rem 0 1.5rem 3rem;
+                left: 0;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-left: 3rem;
+            }
+            
+            .timeline-item:nth-child(odd):before,
+            .timeline-item:nth-child(even):before {
+                left: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Health Effects of Smoking</h1>
+            <p>Understanding the devastating impact of tobacco on your body</p>
+        </header>
+        
+        <div class="intro">
+            <h2>Why Quit Smoking?</h2>
+            <p>Smoking harms nearly every organ in your body. The chemicals in cigarette smoke enter your bloodstream and can travel throughout your body, causing damage everywhere they go. Quitting smoking is one of the most important actions you can take to improve your health.</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">8 million</div>
+                <p>Deaths worldwide each year caused by tobacco</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7,000</div>
+                <p>Chemicals in tobacco smoke, at least 70 cause cancer</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10 years</div>
+                <p>Average reduction in life expectancy for smokers</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">480,000</div>
+                <p>Annual deaths in the U.S. from smoking-related illnesses</p>
+            </div>
+        </div>
+        
+        <h2>How Smoking Affects Your Body</h2>
+        <div class="effects-grid">
+            <div class="effect-card">
+                <div class="effect-icon">
+                    <i class="fas fa-lungs"></i>
+                </div>
+                <h3>Lungs & Respiratory System</h3>
+                <p>Smoking causes lung cancer, COPD, emphysema, and chronic bronchitis. It damages the airways and small air sacs in your lungs, making breathing difficult.</p>
+            </div>
+            
+            <div class="effect-card">
+                <div class="effect-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3>Heart & Circulatory System</h3>
+                <p>Smoking increases blood pressure, reduces circulation, and raises the risk of blood clots. It doubles your risk of heart attack and stroke.</p>
+            </div>
+            
+            <div class="effect-card">
+                <div class="effect-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Brain & Nervous System</h3>
+                <p>Nicotine reaches your brain in seconds, making you feel energized. But as that effect wears off, you feel tired and crave more. Smoking increases risk of stroke.</p>
+            </div>
+            
+            <div class="effect-card">
+                <div class="effect-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <h3>Oral Health</h3>
+                <p>Smoking causes bad breath, tooth discoloration, inflammation of salivary glands, increased plaque buildup, gum disease, and oral cancer.</p>
+            </div>
+            
+            <div class="effect-card">
+                <div class="effect-icon">
+                    <i class="fas fa-baby"></i>
+                </div>
+                <h3>Reproductive System</h3>
+                <p>Smoking can cause infertility, complications during pregnancy, premature birth, low birth weight, stillbirth, and sudden infant death syndrome (SIDS).</p>
+            </div>
+            
+            <div class="effect-card">
+                <div class="effect-icon">
+                    <i class="fas fa-bone"></i>
+                </div>
+                <h3>Bones & Muscles</h3>
+                <p>Smoking reduces blood supply to bones and tissues, decreases calcium absorption, and increases risk of osteoporosis and fractures.</p>
+            </div>
+        </div>
+        
+        <div class="chemicals-section">
+            <h2>Dangerous Chemicals in Cigarettes</h2>
+            <p>A single cigarette contains over 7,000 chemicals. At least 70 of these are known to cause cancer. Here are some of the most dangerous:</p>
+            
+            <ul class="chemical-list">
+                <li><strong>Nicotine</strong> - The addictive drug that keeps you smoking</li>
+                <li><strong>Tar</strong> - Sticky residue that coats lungs and causes cancer</li>
+                <li><strong>Carbon Monoxide</strong> - Poisonous gas that replaces oxygen in blood</li>
+                <li><strong>Arsenic</strong> - Used in rat poison</li>
+                <li><strong>Formaldehyde</strong> - Used to preserve dead bodies</li>
+                <li><strong>Ammonia</strong> - Common household cleaner</li>
+                <li><strong>Acetone</strong> - Found in nail polish remover</li>
+                <li><strong>Lead</strong> - Toxic metal used in batteries</li>
+                <li><strong>Benzene</strong> - Found in rubber cement</li>
+                <li><strong>Butane</strong> - Used in lighter fluid</li>
+            </ul>
+        </div>
+        
+        <div class="timeline">
+            <h2>Health Benefits After Quitting</h2>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>20 Minutes</h3>
+                    <p>Your heart rate and blood pressure drop</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>12 Hours</h3>
+                    <p>Carbon monoxide level in your blood drops to normal</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2 Weeks - 3 Months</h3>
+                    <p>Your heart attack risk begins to drop. Lung function begins to improve</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1 - 9 Months</h3>
+                    <p>Your coughing and shortness of breath decrease</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1 Year</h3>
+                    <p>Your added risk of coronary heart disease is half that of a smoker's</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>5 Years</h3>
+                    <p>Your stroke risk is reduced to that of a non-smoker</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>10 Years</h3>
+                    <p>Your lung cancer death rate is about half that of a smoker's</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>15 Years</h3>
+                    <p>Your risk of coronary heart disease is that of a non-smoker's</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="resources">
+            <h2>Resources to Quit Smoking</h2>
+            <p>Quitting smoking is challenging but possible. Many resources are available to help you on your journey to becoming smoke-free:</p>
+            
+            <ul class="resource-list">
+                <li><a href="#">Smoking cessation programs</a> - Local hospitals and health departments often offer programs</li>
+                <li><a href="#">Nicotine replacement therapy</a> - Patches, gum, lozenges available over-the-counter</li>
+                <li><a href="#">Prescription medications</a> - Consult your doctor about options like Chantix or Zyban</li>
+                <li><a href="#">Support groups</a> - Both in-person and online communities can provide encouragement</li>
+                <li><a href="#">Quitlines</a> - 1-800-QUIT-NOW offers free coaching and support</li>
+                <li><a href="#">Mobile apps</a> - Try apps like QuitGuide or quitSTART to track progress</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>This educational website is for informational purposes only. Consult a healthcare professional for medical advice.</p>
+            <p>© 2023 Health Education Initiative | Help people understand the dangers of smoking</p>
+        </footer>
+    </div>
+</body>
+</html>
